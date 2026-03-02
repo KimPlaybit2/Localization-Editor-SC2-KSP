@@ -31,18 +31,35 @@ mvn -v
 
 Required only if you want to use LibreTranslate.
 
-Recommended Python versions: 3.10–3.12:  
+Recommended Python versions: **3.10–3.12**  
+⚠ Very new Python versions (for example 3.14+) may not be supported yet.
+
+Download Python from:  
 https://www.python.org/downloads/
 
-⚠ On Windows, make sure to check **"Add Python to PATH"** during installation.
+On Windows, make sure to check **"Add Python to PATH"** during installation.
 
-Install LibreTranslate:
+---
+
+#### Windows Additional Requirement
+
+LibreTranslate requires Microsoft Visual C++ Redistributable (x64).
+
+Download and install:  
+https://aka.ms/vs/17/release/vc_redist.x64.exe
+
+---
+
+#### Install LibreTranslate
 
 ```bash
+python -m pip install --upgrade pip
 python -m pip install libretranslate
 ```
 
-Start the LibreTranslate server:
+---
+
+#### Start LibreTranslate server
 
 ```bash
 python -m libretranslate --host 127.0.0.1 --port 5000
