@@ -31,7 +31,7 @@ mvn -v
 
 Required only if you want to use LibreTranslate.
 
-Install **Python 3.9+** from:  
+Recommended Python versions: 3.10–3.12:  
 https://www.python.org/downloads/
 
 ⚠ On Windows, make sure to check **"Add Python to PATH"** during installation.
