@@ -7,6 +7,8 @@ Opens `GameStrings.txt` files, translates them into selected languages, and auto
 
 ## Requirements
 
+## Requirements
+
 ### 1. Java (JDK 17+)
 
 Download JDK 17 or newer from:
@@ -18,7 +20,7 @@ Check your Java version:
 
 ```bash
 java -version
----
+```
 
 ### 2. Maven (3.8+ recommended)
 
