@@ -80,7 +80,7 @@ Install ONNX Runtime:
 
 ```bash
 python -m pip install onnxruntime
-
+```
 ```bash
 python -m pip install onnxruntime==1.16.3
 ```
