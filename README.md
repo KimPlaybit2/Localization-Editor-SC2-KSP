@@ -9,15 +9,26 @@ Opens `GameStrings.txt` files, translates them into selected languages, and auto
 
 ### 1. Java (JDK 17+)
 
+Download JDK 17 or newer from:
+
+- [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)
+- [OpenJDK (Adoptium – recommended)](https://adoptium.net/)
+
 Check your Java version:
 
 ```bash
 java -version
-```
-
 ---
 
 ### 2. Maven (3.8+ recommended)
+
+Download Maven from:
+
+- [Apache Maven Download Page](https://maven.apache.org/download.cgi)
+
+After downloading, follow the installation guide:
+
+- [Maven Installation Guide](https://maven.apache.org/install.html)
 
 Check your Maven version:
 
