@@ -68,8 +68,6 @@ https://aka.ms/vs/17/release/vc_redist.x64.exe
 ```bash
 python -m pip install --upgrade pip
 
-python -m pip install --upgrade pip
-
 python -m pip install "wheel==0.45.1"
 
 python -m pip install libretranslate
