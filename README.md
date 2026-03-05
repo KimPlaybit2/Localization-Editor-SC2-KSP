@@ -7,8 +7,6 @@ Opens `GameStrings.txt` files, translates them into selected languages, and auto
 
 ## Requirements
 
-## Requirements
-
 ### 1. Java (JDK 17+)
 
 Download JDK 17 or newer from:
@@ -70,7 +68,7 @@ LibreTranslate requires **ONNX Runtime** to execute translation models.
 Install ONNX Runtime:
 
 ```bash
-python -m pip install onnxruntime==1.16.3
+python -m pip install onnxruntime==1.24.1
 ```
 
 If you need to reinstall:
@@ -79,7 +77,10 @@ If you need to reinstall:
 python -m pip uninstall onnxruntime -y
 python -m pip install onnxruntime==1.24.1
 ```
-
+You can verify the installed version with:
+```bash
+python -c "import onnxruntime as ort; print(ort.__version__)"
+```
 ⚠ If you see a warning that the `Scripts` directory is not on `PATH`
 (for example `Python311\Scripts`), either add it to `PATH`
 or run `libretranslate.exe` directly from that folder.
@@ -102,11 +103,15 @@ python -m pip install libretranslate
 
 Start the LibreTranslate server using the following command:
 
+First start (downloads translation models):
 ```bash
 libretranslate --load-only en,ru,de,es,fr,it,pl,pt,ko,zh,zt --update-models
 ```
-After starting, you should see:
-
+Later starts:
+```bash
+libretranslate --load-only en,ru,de,es,fr,it,pl,pt,ko,zh,zt
+```
+If everything is correct, you should see:
 ```
 Running on http://127.0.0.1:5000
 ```
@@ -118,7 +123,17 @@ http://127.0.0.1:5000
 ```
 
 If LibreTranslate is not running, auto-translation will not work.
-
+Test LibreTranslate (Optional)
+You can test the translation server with:
+```bash
+curl -X POST http://127.0.0.1:5000/translate \
+  -H "Content-Type: application/json" \
+  -d "{\"q\":\"Hello world\",\"source\":\"en\",\"target\":\"de\"}"```
+  Expected output example:
+  ```bash
+  {
+  "translatedText": "Hallo Welt"
+}```
 ---
 
 ## Run with Maven
