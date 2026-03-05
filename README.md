@@ -70,9 +70,6 @@ LibreTranslate requires **ONNX Runtime** to execute translation models.
 Install ONNX Runtime:
 
 ```bash
-python -m pip install onnxruntime
-```
-```bash
 python -m pip install onnxruntime==1.16.3
 ```
 
@@ -106,11 +103,8 @@ python -m pip install libretranslate
 Start the LibreTranslate server using the following command:
 
 ```bash
-libretranslate --update-models
-
-libretranslate --host 127.0.0.1 --port 5000 --load-only en,ru,de,es,fr,it,pl,pb,ko,zh,zt
+libretranslate --load-only en,ru,de,es,fr,it,pl,pt,ko,zh,zt --update-models
 ```
-
 After starting, you should see:
 
 ```
