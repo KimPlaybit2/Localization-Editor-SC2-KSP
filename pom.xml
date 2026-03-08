@@ -142,6 +142,8 @@
                     <mainJar>Localization_Editor_SC2_KSP-1.0-SNAPSHOT.jar</mainJar>
                     <mainClass>lv.lenc.AppLauncher</mainClass>
 
+                    <runtimeImage>${java.home}</runtimeImage>
+
                     <type>EXE</type>
 
                     <winMenu>true</winMenu>
