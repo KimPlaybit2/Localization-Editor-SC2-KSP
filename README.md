@@ -57,6 +57,7 @@ start-libretranslate.bat
 ```
 
 The batch file starts LibreTranslate for you through Docker Compose.
+No separate LibreTranslate program installation is required in this mode.
 
 This will start LibreTranslate at:
 
@@ -110,6 +111,7 @@ or if you want to run LibreTranslate manually.
 ### Optional: Start LibreTranslate with Docker from the command line
 
 Use this if you want Docker, but prefer command-line commands instead of the batch file.
+This is also the preferred manual strategy if you do not want to install LibreTranslate as a local program.
 
 From the project root directory, run:
 
@@ -219,6 +221,9 @@ or run `libretranslate.exe` directly from that folder.
 
 ---
 ### Install LibreTranslate
+
+Use this section only if you want to run LibreTranslate without Docker.
+If you use `docker-compose.yml`, skip this section.
 
 ```bash
 python -m pip install --upgrade pip
