@@ -9,9 +9,9 @@ if (-not (Test-Path $javaExe)) {
     $javaExe = "java"
 }
 
-$jarCandidates = Get-ChildItem -Path (Join-Path $root "target") -Filter "*-cli.jar" -File -ErrorAction SilentlyContinue |
-    Sort-Object LastWriteTime -Descending
-if ($jarCandidates -and $jarCandidates.Count -gt 0) {
+$jarCandidates = @(Get-ChildItem -Path (Join-Path $root "target") -Filter "*-cli.jar" -File -ErrorAction SilentlyContinue |
+    Sort-Object LastWriteTime -Descending)
+if ($jarCandidates.Count -gt 0) {
     & $javaExe -jar $jarCandidates[0].FullName @args
     exit $LASTEXITCODE
 }
@@ -32,9 +32,9 @@ if (-not (Test-Path $mainClassFile)) {
             New-Item -ItemType Directory -Path $classesDir -Force | Out-Null
         }
 
-        $cliSources = Get-ChildItem -Path (Join-Path $root "src\main\java\lv\lenc\cli\*.java") -File |
-            Select-Object -ExpandProperty FullName
-        if (-not $cliSources -or $cliSources.Count -eq 0) {
+        $cliSources = @(Get-ChildItem -Path (Join-Path $root "src\main\java\lv\lenc\cli\*.java") -File |
+            Select-Object -ExpandProperty FullName)
+        if ($cliSources.Count -eq 0) {
             throw "No CLI source files found in src/main/java/lv/lenc/cli"
         }
 
